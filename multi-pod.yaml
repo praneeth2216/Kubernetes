@@ -1,0 +1,16 @@
+apiversion: v1
+kind: pod
+metadata:
+  name: multi-container-pod
+  labels: 
+    app: demo
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+      ports: 
+        - containerport: 80
+    - name: busybox-container
+      image: busybox
+      command: ["sleep", "3600"]
+          
