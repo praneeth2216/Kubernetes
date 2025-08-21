@@ -1,0 +1,16 @@
+apiversion: batch/v1
+kind: job
+metadata: 
+  name: multi-cintainer-job
+spec:
+  template:
+    spec:
+      containers:
+        - name: busybox
+          image: busybox
+          command: ["echo", "hello from busybox"]
+        - name: alpine
+          image: alpine
+          command: ["echo", "hello from alpine"]
+      restartpolicy: Never    
+      
